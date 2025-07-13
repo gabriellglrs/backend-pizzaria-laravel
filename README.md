@@ -1,61 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# API de Pizzaria em Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Esta é uma API RESTful desenvolvida em Laravel para gerenciar uma pizzaria. A aplicação permite o gerenciamento de clientes, funcionários, produtos, pedidos e pagamentos.
 
-## About Laravel
+## Sobre o Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este projeto foi criado para fornecer uma API robusta e escalável para um sistema de pizzaria. Ele utiliza o framework Laravel 12 e segue as melhores práticas de desenvolvimento para garantir um código limpo e de fácil manutenção.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Recursos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   **Gerenciamento de Clientes:** CRUD completo para clientes.
+*   **Gerenciamento de Funcionários:** CRUD completo para funcionários.
+*   **Gerenciamento de Categorias:** CRUD completo para categorias de produtos.
+*   **Gerenciamento de Produtos:** CRUD completo para produtos.
+*   **Gerenciamento de Pedidos:** CRUD completo para pedidos.
+*   **Gerenciamento de Itens de Pedido:** CRUD completo para os itens de um pedido.
+*   **Gerenciamento de Pagamentos:** CRUD completo para pagamentos.
 
-## Learning Laravel
+## Pré-requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Antes de começar, certifique-se de ter os seguintes softwares instalados em sua máquina:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+*   [PHP](https://www.php.net/downloads.php) (versão 8.2 ou superior)
+*   [Composer](https://getcomposer.org/download/)
+*   [Node.js](https://nodejs.org/en/download/) (e npm)
+*   [Git](https://git-scm.com/downloads)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalação
 
-## Laravel Sponsors
+1.  **Clone o repositório:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    git clone https://github.com/gabriellglrs/backend-pizzaria-laravel.git
+    cd backend-pizzaria-laravel
+    ```
 
-### Premium Partners
+2.  **Instale as dependências do PHP:**
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+    ```bash
+    composer install
+    ```
 
-## Contributing
+3.  **Instale as dependências do Node.js:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    npm install
+    ```
 
-## Code of Conduct
+4.  **Configure o arquivo de ambiente:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente, como a conexão com o banco de dados.
 
-## Security Vulnerabilities
+    ```bash
+    cp .env.example .env
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5.  **Gere a chave da aplicação:**
 
-## License
+    ```bash
+    php artisan key:generate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6.  **Execute as migrações do banco de dados:**
+
+    ```bash
+    php artisan migrate
+    ```
+
+7.  **Inicie o servidor de desenvolvimento:**
+
+    ```bash
+    php artisan serve
+    ```
+
+## Endpoints da API
+
+A seguir estão os endpoints da API disponíveis:
+
+### Clientes
+
+*   `GET /api/clientes`: Lista todos os clientes.
+*   `GET /api/clientes/{id}`: Obtém um cliente específico.
+*   `POST /api/clientes`: Cria um novo cliente.
+*   `PUT /api/clientes/{id}`: Atualiza um cliente existente.
+*   `DELETE /api/clientes/{id}`: Exclui um cliente.
+
+### Funcionários
+
+*   `GET /api/funcionarios`: Lista todos os funcionários.
+*   `GET /api/funcionarios/{id}`: Obtém um funcionário específico.
+*   `POST /api/funcionarios`: Cria um novo funcionário.
+*   `PUT /api/funcionarios/{id}`: Atualiza um funcionário existente.
+*   `DELETE /api/funcionarios/{id}`: Exclui um funcionário.
+
+### Categorias
+
+*   `GET /api/categorias`: Lista todas as categorias.
+*   `GET /api/categorias/{id}`: Obtém uma categoria específica.
+*   `POST /api/categorias`: Cria uma nova categoria.
+*   `PUT /api/categorias/{id}`: Atualiza uma categoria existente.
+*   `DELETE /api/categorias/{id}`: Exclui uma categoria.
+
+### Produtos
+
+*   `GET /api/produtos`: Lista todos os produtos.
+*   `GET /api/produtos/{id}`: Obtém um produto específico.
+*   `POST /api/produtos`: Cria um novo produto.
+*   `PUT /api/produtos/{id}`: Atualiza um produto existente.
+*   `DELETE /api/produtos/{id}`: Exclui um produto.
+
+### Pedidos
+
+*   `GET /api/pedidos`: Lista todos os pedidos.
+*   `GET /api/pedidos/{id}`: Obtém um pedido específico.
+*   `POST /api/pedidos`: Cria um novo pedido.
+*   `PUT /api/pedidos/{id}`: Atualiza um pedido existente.
+*   `DELETE /api/pedidos/{id}`: Exclui um pedido.
+
+### Itens de Pedido
+
+*   `GET /api/itens-pedido`: Lista todos os itens de pedido.
+*   `GET /api/itens-pedido/{id}`: Obtém um item de pedido específico.
+*   `POST /api/itens-pedido`: Cria um novo item de pedido.
+*   `PUT /api/itens-pedido/{id}`: Atualiza um item de pedido existente.
+*   `DELETE /api/itens-pedido/{id}`: Exclui um item de pedido.
+
+### Pagamentos
+
+*   `GET /api/pagamentos`: Lista todos os pagamentos.
+*   `GET /api/pagamentos/{id}`: Obtém um pagamento específico.
+*   `POST /api/pagamentos`: Cria um novo pagamento.
+*   `PUT /api/pagamentos/{id}`: Atualiza um pagamento existente.
+*   `DELETE /api/pagamentos/{id}`: Exclui um pagamento.
