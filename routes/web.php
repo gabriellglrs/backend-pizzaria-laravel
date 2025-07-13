@@ -9,10 +9,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
-// Rotas da aplicação testando o Laravel
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 // Rotas para Clientes
 Route::apiResource('clientes', ClienteController::class);
